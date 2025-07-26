@@ -1,23 +1,23 @@
 "use client"
-import { blog_data, assets } from '@/Assets/assets'
+import { blog_data, assets } from '../../../Assets/assets'
 import React, { useState, use, useEffect } from 'react'
 import Image from 'next/image'
-import Footer from '@/components/Footer'
+import Footer from '../../../components/Footer'
 import Link from 'next/link'
+import axios from 'axios'
 
 const page = ({params}) => {
   const [data, setData] =  useState(null)
   const paramsId = use(params)
 
-  const fetchData = ()=>{
-    for(let i=0; i < blog_data.length; i++){
-      if(Number(paramsId.id) == blog_data[i].id){
-          setData(blog_data[i])
-          console.log(blog_data[i])
-          break;
-      }
-    }
+  const fetchData = async () => {
     
+    const response = await axios.get('/api/blogs', {
+      params:{
+        id: paramsId.id
+      }
+    })
+    setData(response.data)
   }
   useEffect(()=>{
     fetchData()
@@ -35,12 +35,12 @@ const page = ({params}) => {
       </div>
       <div className='text-center my-24'>
          <h1 className='text-2xl sm:text-5xl font-semibold max-w-[700px] mx-auto'>{data.title}</h1>
-         <Image className='mx-auto mt-6 border border-white rounded-full' src={data.author_img} alt={data.author} />
+         <Image className='mx-auto mt-6 border border-white rounded-full' src={data.authorImg} width={60} height={60} alt={data.author} />
          <p className='mt-1 pb-2 text-lg max-w-[740px] mx-auto'>{data.author}</p>
       </div>
     </div>
     <div className='mx-5 max-w-[800px] md:mx-auto mt-[-100px] mb-10'>
-         <Image width={1280} height={720} src={data.image} className='border-4 border-white' alt=''/>
+         <Image width={1280} height={720} src={`/${data.image}`} className='border-4 border-white' alt=''/>
          <h1 className='my-8 text-[26px] font-semibold'>Introduction:</h1>
          <p>{data.description}</p>
          <h3 className='my-5 text-[18px] font-semibold'>step 1: Self Reflection  and Goal Setting</h3>
