@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import {assets} from '@/Assets/assets'
+import {assets} from '../Assets/assets'
 import React from 'react'
 
 export const Header = () => {

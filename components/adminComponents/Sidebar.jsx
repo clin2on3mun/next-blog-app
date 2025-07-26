@@ -15,7 +15,7 @@ const Sidebar = () => {
             <Image src={assets.add_icon} width={28} alt="" />
             <p>Add blog</p>
           </Link>
-          <Link href="/admin/blogList" className="mt-5 flex items-center border border-black gap-3 font-medium px-3 py-3 bg-white shadow-[-5px_5px_0_#000000]">
+          <Link href="/admin/bloglist" className="mt-5 flex items-center border border-black gap-3 font-medium px-3 py-3 bg-white shadow-[-5px_5px_0_#000000]">
             <Image src={assets.blog_icon} width={28} alt="" />
             <p>Blog List</p>
           </Link>
