@@ -41,33 +41,9 @@ const page = ({params}) => {
     </div>
     <div className='mx-5 max-w-[800px] md:mx-auto mt-[-100px] mb-10'>
          <Image width={1280} height={720} src={`/${data.image}`} className='border-4 border-white' alt=''/>
-         <h1 className='my-8 text-[26px] font-semibold'>Introduction:</h1>
-         <p>{data.description}</p>
-         <h3 className='my-5 text-[18px] font-semibold'>step 1: Self Reflection  and Goal Setting</h3>
-         <p className='my-3'>
-           Before you manage you can manage your lifestyle have a clear understanding of what you want to achieve. start by reflecting on your values, and long-term goals 
-         </p>
-          <p className='my-3'>
-           Before you manage you can manage your lifestyle have a clear understanding of what you want to achieve. start by reflecting on your values, and long-term goals 
-         </p>
-          <h3 className='my-5 text-[18px] font-semibold'>step 2: Self Reflection  and Goal Setting</h3>
-         <p className='my-3'>
-           Before you manage you can manage your lifestyle have a clear understanding of what you want to achieve. start by reflecting on your values, and long-term goals 
-         </p>
-          <p className='my-3'>
-           Before you manage you can manage your lifestyle have a clear understanding of what you want to achieve. start by reflecting on your values, and long-term goals 
-         </p>
-          <h3 className='my-5 text-[18px] font-semibold'>step 3: Self Reflection  and Goal Setting</h3>
-         <p className='my-3'>
-           Before you manage you can manage your lifestyle have a clear understanding of what you want to achieve. start by reflecting on your values, and long-term goals 
-         </p>
-          <p className='my-3'>
-           Before you manage you can manage your lifestyle have a clear understanding of what you want to achieve. start by reflecting on your values, and long-term goals 
-         </p>
-          <h3 className='my-5 text-[18px] font-semibold'>Conclusion:</h3>
-         <p className='my-3'>
-           Before you manage you can manage your lifestyle have a clear understanding of what you want to achieve. start by reflecting on your values, and long-term goals 
-         </p>
+         <div className='blog-content' dangerouslySetInnerHTML={{__html: data.description}}>
+         </div>
+         
          <div className='my-24'>
           <p className='text-black font-semi-bold my-4'> Share this Article on social media</p>
           <div className='flex'>

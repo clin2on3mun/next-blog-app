@@ -1,6 +1,6 @@
 import React from 'react'
 
-function page() {
+export function page() {
   return (
     <div>Page</div>
   )
